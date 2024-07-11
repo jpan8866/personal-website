@@ -316,7 +316,7 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
+  max-height: 211px;
   overflow: hidden;
   transition: var(--transition-2);
 }
@@ -329,6 +329,11 @@ main {
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
+}
+
+.avatar-box img {
+  width: 200px;
+  border-radius: 20px;
 }
 
 .avatar-box {
@@ -520,6 +525,9 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
 }
 
 .service-item {
@@ -529,6 +537,7 @@ main {
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   z-index: 1;
+  scroll-snap-align: center;
 }
 
 .service-item::before {
@@ -1234,6 +1243,13 @@ textarea.form-input::-webkit-resizer { display: none; }
  */
 
 @media (min-width: 450px) {
+  .sidebar {
+    max-height: 212px;
+  }
+  .avatar-box img {
+    width: 200px;
+    border-radius: 20px;
+  }
 
   /**
    * client
@@ -1290,8 +1306,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar, article {
     width: 520px;
-    margin-inline: auto;
-    padding: 30px;
+    padding: 20px;
   }
 
   .article-title {
@@ -1329,17 +1344,17 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar {
-    max-height: 180px;
+    max-height: 275px;
     margin-bottom: 30px;
   }
 
-  .sidebar.active { max-height: 584px; }
+  .sidebar.active { max-height: 630px; }
 
   .sidebar-info { gap: 25px; }
 
   .avatar-box { border-radius: 30px; }
 
-  .avatar-box img { width: 120px; }
+  .avatar-box img { width: 260px; border-radius: 20px; }
 
   .info-content .name { margin-bottom: 15px; }
 
@@ -1803,7 +1818,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   main {
-    max-width: 1200px;
+    max-width: 1400px;
     margin-inline: auto;
     display: flex;
     justify-content: center;
@@ -1829,13 +1844,20 @@ textarea.form-input::-webkit-resizer { display: none; }
     max-height: max-content;
     height: 100%;
     margin-bottom: 0;
-    padding-top: 60px;
+    padding-top: 20px;
     z-index: 1;
+  }
+
+  .sidebar.active {
+    max-height: max-content;
   }
 
   .sidebar-info { flex-direction: column; }
 
-  .avatar-box img { width: 150px; }
+  .avatar-box img { 
+    width: 250px;
+    border-radius: 20px; 
+  }
 
   .info-content .name {
     white-space: nowrap;
